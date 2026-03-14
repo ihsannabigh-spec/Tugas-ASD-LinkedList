@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int main() {
+    Node* head = NULL;
+
+    Node* newNode = new Node;
+    newNode->data = 10;
+
+    if (head == NULL) {
+        head = newNode;
+        newNode->next = head;
+    }
+
+    Node* temp = head;
+    if (temp != NULL) {
+        do {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        } while (temp != head);
+    }
+    cout << "(kembali ke head)" << endl;
+
+    return 0;
+}
